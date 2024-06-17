@@ -20,7 +20,7 @@ function toggleAnimation() {
 }
 
 function checkCredentials() {
-    var name = document.getElementById('name').value;
+    var name = document.getElementById('name').value.trim();
     var password = document.getElementById('password').value;
 
     var index = names.indexOf(name);
