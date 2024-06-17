@@ -127,9 +127,9 @@ function checkCredentials() {
     
 }
 
-var names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Eszter Lőrincz', 'Betti Szmutku', 'Kristina Stavri', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nándor Tóth', 'Nóra Kovács', 'Thomas Percy', 'Bence Bíró', 'Bende Halasz', ]
-var passwords = ['hat-trick22', 'extra time35', 'free-kick24', 'referee31', 'tactics69', 'tackle94', 'header13', 'celebration53', 'champion57', 'goalkeeper88', 'fans67', 'team57', 'offside60', 'assist24', ]
-var countries =  ['Czech Republic', 'Turkey', 'Slovenia', 'Scotland', 'Poland', 'Portugal', 'Hungary', 'Denmark', 'Romania', 'Netherlands', 'Serbia', 'Slovakia', 'Switzerland', 'Croatia']
+var names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Betti Szmutku', 'Kristina Stavri', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nándor Tóth', 'Nóra Kovács', 'Thomas Percy', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai ', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', ]
+var passwords = ['pitch91', 'own goal73', 'net19', 'tournament75', 'tournament10', 'offside63', 'tackle42', 'volley71', 'header12', 'goalkeeper13', 'league81', 'captain26', 'corner62', 'corner69', 'free-kick68', 'free-kick80', 'hat-trick71', 'pass62', 'striker57', 'corner88', 'cleats36', ]
+var countries =  ['Denmark', 'Serbia', 'Poland', 'Turkey', 'Albania', 'Switzerland', 'Romania', 'Austria', 'Slovakia', 'Croatia', 'Georgia', 'Czech Republic', 'Netherlands', 'Hungary', 'England', 'Italy', 'Belgium', 'Germany', 'Spain', 'Ukraine', 'Scotland']
 
 const euro2024Teams = {
     "Albania": "al",
