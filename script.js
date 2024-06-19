@@ -134,8 +134,8 @@ function checkCredentials() {
 }
 
 var names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nóra Kovács', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', 'Kálai Gábor', 'Németh Erik', 'Kovács Botond', 'Eőri Panna', 'Kutak Borbála', 'Ngan Pham', 'Ei Yamin Oo', ]
-var passwords = ['goalkeeper74', 'goal15', 'cross58', 'cross82', 'dribble69', 'header31', 'dribble74', 'possession29', 'volley56', 'tactics45', 'striker90', 'whistle58', 'header98', 'ball32', 'corner12', 'defense59', 'hat-trick62', 'defense16', 'kit29', 'penalty73', 'pass59', 'cross32', 'hat-trick14', 'corner42', ]
-var countries =  ['Hungary', 'Czech Republic', 'Austria', 'Serbia', 'Georgia', 'Croatia', 'Germany', 'Denmark', 'Portugal', 'Poland', 'Italy', 'Slovakia', 'England', 'Scotland', 'Belgium', 'Albania', 'Slovenia', 'Netherlands', 'France', 'Spain', 'Switzerland', 'Ukraine', 'Romania', 'Turkey']
+var passwords = ['nutmeg29', 'pass28', 'referee53', 'goal35', 'hat-trick28', 'foul57', 'striker19', 'volley33', 'captain12', 'cleats16', 'tactics89', 'fans32', 'cleats73', 'goalkeeper10', 'formation74', 'nutmeg57', 'goalkeeper38', 'striker69', 'defense35', 'striker59', 'tactics48', 'volley43', 'kit13', 'injury78', ]
+var countries =  ['Spain', 'Portugal', 'Ukraine', 'Albania', 'Denmark', 'Belgium', 'Italy', 'Croatia', 'Romania', 'Hungary', 'Germany', 'France', 'Serbia', 'England', 'Netherlands', 'Turkey', 'Czech Republic', 'Georgia', 'Scotland', 'Switzerland', 'Austria', 'Slovenia', 'Slovakia', 'Poland']
 
 const euro2024Teams = {
     "Albania": { code: "al", url: "2--albania" },
