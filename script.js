@@ -133,9 +133,9 @@ function checkCredentials() {
     
 }
 
-var names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Betti Szmutku', 'Kristina Stavri', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nándor Tóth', 'Nóra Kovács', 'Thomas Percy', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai ', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', ]
-var passwords = ['pitch91', 'own goal73', 'net19', 'tournament75', 'tournament10', 'offside63', 'tackle42', 'volley71', 'header12', 'goalkeeper13', 'league81', 'captain26', 'corner62', 'corner69', 'free-kick68', 'free-kick80', 'hat-trick71', 'pass62', 'striker57', 'corner88', 'cleats36', ]
-var countries =  ['Denmark', 'Serbia', 'Poland', 'Turkey', 'Albania', 'Switzerland', 'Romania', 'Austria', 'Slovakia', 'Croatia', 'Georgia', 'Czech Republic', 'Netherlands', 'Hungary', 'England', 'Italy', 'Belgium', 'Germany', 'Spain', 'Ukraine', 'Scotland']
+var names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nóra Kovács', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', 'Kálai Gábor', 'Németh Erik', 'Kovács Botond', 'Eőri Panna', 'Kutak Borbála', 'Ngan Pham', 'Ei Yamin Oo', ]
+var passwords = ['goalkeeper74', 'goal15', 'cross58', 'cross82', 'dribble69', 'header31', 'dribble74', 'possession29', 'volley56', 'tactics45', 'striker90', 'whistle58', 'header98', 'ball32', 'corner12', 'defense59', 'hat-trick62', 'defense16', 'kit29', 'penalty73', 'pass59', 'cross32', 'hat-trick14', 'corner42', ]
+var countries =  ['Hungary', 'Czech Republic', 'Austria', 'Serbia', 'Georgia', 'Croatia', 'Germany', 'Denmark', 'Portugal', 'Poland', 'Italy', 'Slovakia', 'England', 'Scotland', 'Belgium', 'Albania', 'Slovenia', 'Netherlands', 'France', 'Spain', 'Switzerland', 'Ukraine', 'Romania', 'Turkey']
 
 const euro2024Teams = {
     "Albania": { code: "al", url: "2--albania" },
