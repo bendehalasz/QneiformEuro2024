@@ -1,18 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
 
-
-    document.getElementById("container").addEventListener("keyup", function(event) {
-        // Check if the key pressed is Enter (key code 13)
-        if (event.key === "Enter") {
-            // Trigger the form submission function
-            checkCredentials();
-        }
-    });
-
-    
-
-    //document.getElementById("box").addEventListener("click", () => toggleAnimation())
-});
 
 function toggleAnimation() {
     const boxBody = document.querySelector('.box-body');
@@ -166,16 +152,16 @@ const euro2024Teams = {
 
 
 
-const count = 200,
-  defaults = {
-    origin: { y: 0.7 },
-  };
 
-function fire(particleRatio, opts) {
-  confetti(
-    Object.assign({}, defaults, opts, {
-      particleCount: Math.floor(count * particleRatio),
-    })
-  );
-}
+document.addEventListener('DOMContentLoaded', function() {
+  var tableBody = document.getElementById("summaryTableBody");
+
+  names.forEach(function(name) {
+      var row = document.createElement('tr');
+      var cell = document.createElement('td');
+      cell.textContent = name;
+      row.appendChild(cell);
+      tableBody.appendChild(row);
+  });
+});
 

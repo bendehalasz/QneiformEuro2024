@@ -3,31 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qneiform Euro 2024</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-
+    <title>Bootstrap Table with Passwords</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="snow" data-count="200"></div>
-
-    <div   class="container" id="container">
-        <img  src="./media/logo_dark.5c08fb70.png">
-        <form id="loginForm">
-            <div id="result" class="hidden"></div>
-            <input aria-invalid="false" aria-describedby=":r1:" id="name" name="username" placeholder="Username" required="" type="text" class="MuiInputBase-input css-v5hc4g" value="">
-            <input aria-invalid="false" aria-describedby=":r3:" autocomplete="current-password" id="password" name="password" placeholder="Password" required="" type="password" class="MuiInputBase-input css-v5hc4g" value="">
-            <button type="button" onclick="checkCredentials()">LOGIN</button>
-
-        </form>
-        
+    <div class="container mt-5">
+        <h2 class="mb-4">List of Names and Passwords</h2>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
     </div>
 
-    <div class="hidden" id="drawn_person">
-      <h3 id="drawn_person_name" class="h3">Scotland</h3>
-    </div>
-    
+    <script>
+        const names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nóra Kovács', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', 'Kálai Gábor', 'Németh Erik', 'Kovács Botond', 'Eőri Panna', 'Kutak Borbála', 'Ngan Pham', 'Ei Yamin Oo'];
+        const passwords = ['nutmeg29', 'pass28', 'referee53', 'goal35', 'hat-trick28', 'foul57', 'striker19', 'volley33', 'captain12', 'cleats16', 'tactics89', 'fans32', 'cleats73', 'goalkeeper10', 'formation74', 'nutmeg57', 'goalkeeper38', 'striker69', 'defense35', 'striker59', 'tactics48', 'volley43', 'kit13', 'injury78'];
+        var countries =  ['Spain', 'Portugal', 'Ukraine', 'Albania', 'Denmark', 'Belgium', 'Italy', 'Croatia', 'Romania', 'Hungary', 'Germany', 'France', 'Serbia', 'England', 'Netherlands', 'Turkey', 'Czech Republic', 'Georgia', 'Scotland', 'Switzerland', 'Austria', 'Slovenia', 'Slovakia', 'Poland']
+
+        const euro2024Teams = {
+            "Albania": { code: "al", url: "2--albania" },
+            "Austria": { code: "at", url: "8--austria" },
+            "Belgium": { code: "be", url: "13--belgium" },
+            "Croatia": { code: "hr", url: "56370--croatia" },
+            "Czech Republic": { code: "cz", url: "58837--czechia" },
+            "Denmark": { code: "dk", url: "35--denmark" },
+            "England": { code: "gb", url: "39--england" },
+            "France": { code: "fr", url: "43--france" },
+            "Georgia": { code: "ge", url: "57157--georgia" },
+            "Germany": { code: "de", url: "47--germany" },
+            "Hungary": { code: "hu", url: "57--hungary" },
+            "Italy": { code: "it", url: "66--italy" },
+            "Netherlands": { code: "nl", url: "95--netherlands" },
+            "Poland": { code: "pl", url: "109--poland" },
+            "Portugal": { code: "pt", url: "110--portugal" },
+            "Romania": { code: "ro", url: "113--romania" },
+            "Scotland": { code: "gb-sct", url: "117--scotland" },
+            "Serbia": { code: "rs", url: "147--serbia" },
+            "Slovakia": { code: "sk", url: "58836--slovakia" },
+            "Slovenia": { code: "si", url: "57163--slovenia" },
+            "Spain": { code: "es", url: "122--spain" },
+            "Switzerland": { code: "ch", url: "128--switzerland" },
+            "Turkey": { code: "tr", url: "135--turkiye" },
+            "Ukraine": { code: "ua", url: "57166--ukraine" }
+        };
+
+
+        const tbody = document.querySelector('tbody');
+        names.forEach((name, index) => {
+            let county_index = (index + 2) % passwords.length;
+            if (county_index < 0) {
+                county_index = passwords.length + county_index;
+            }
+
+            const countryElement = euro2024Teams[countries[county_index]];
+
+            const flagElement = document.createElement('span');
+            flagElement.className = `flag-icon flag-icon-${countryElement.code}`;
+            flagElement.id = 'country_flag';
+
+            const tr = document.createElement('tr');
+            const nameCell = document.createElement('td');
+            nameCell.appendChild(flagElement);
+            nameCell.append(` ${name}`);
+
+            tr.innerHTML = `<td>${index + 1}</td>`;
+            tr.appendChild(nameCell);
+            tr.innerHTML += `<td>${countries[county_index]}</td>`;
+
+            tbody.appendChild(tr);
+        });
+    </script>
 </body>
 </html>
