@@ -1,167 +1,158 @@
-
-
-function toggleAnimation() {
-    const boxBody = document.querySelector('.box-body');
-    boxBody.classList.toggle('clicked');
-}
-
-function checkCredentials() {
-    var name = document.getElementById('name').value.trim();
-    var password = document.getElementById('password').value;
-
-    var index = names.indexOf(name);
-
-    if (index !== -1)
-    {
-        password_index = (index-3)%passwords.length
-        if(password_index < 0)
-        {
-            password_index = passwords.length + password_index
-        }
-        if (password === passwords[password_index]) {
-
-            // Hide the login form
-            document.getElementById('container').style.display = 'none';
-            profile_index = (index+2)%countries.length
-            if(profile_index < 0)
-            {
-                profile_index = countries.length + profile_index
-            }
-            document.getElementById('drawn_person_name').innerHTML = countries[profile_index]
-
-            
-            const countryElement = euro2024Teams[countries[profile_index]];
-
-            const flagElement = document.createElement('span');
-            flagElement.className = `flag-icon flag-icon-${countryElement.code}`;
-            flagElement.id = 'country_flag';
-            document.getElementById('drawn_person').appendChild(flagElement);
-
-            const urlElement = document.createElement('span');
-            urlElement.id = "country_url";
-            urlElement.innerHTML = `To learn more about your team, click <a href="https://www.uefa.com/european-qualifiers/teams/${countryElement.url}/" target=blank>here</a>`;
-            document.getElementById('drawn_person').appendChild(urlElement);
-
-            document.getElementById('drawn_person').classList.remove('hidden');
-            document.getElementById('drawn_person').classList.add('show');
-
-            fire(0.25, {
-                spread: 26,
-                startVelocity: 55,
-              });
-              
-              fire(0.2, {
-                spread: 60,
-              });
-              
-              fire(0.35, {
-                spread: 100,
-                decay: 0.91,
-                scalar: 0.8,
-              });
-              
-              fire(0.1, {
-                spread: 120,
-                startVelocity: 25,
-                decay: 0.92,
-                scalar: 1.2,
-              });
-              
-              fire(0.1, {
-                spread: 120,
-                startVelocity: 45,
-              });
-
-              fire(0.25, {
-                spread: 26,
-                startVelocity: 55,
-              });
-              
-              fire(0.2, {
-                spread: 60,
-              });
-              
-              fire(0.35, {
-                spread: 100,
-                decay: 0.91,
-                scalar: 0.8,
-              });
-              
-              fire(0.1, {
-                spread: 120,
-                startVelocity: 25,
-                decay: 0.92,
-                scalar: 1.2,
-              });
-              
-              fire(0.1, {
-                spread: 120,
-                startVelocity: 45,
-              });
-    
-        }
-        else
-        {
-            document.getElementById('result').innerHTML = 'Incorrect Password';
-            document.getElementById('result').classList.remove('hidden');
-            document.getElementById('name').style.borderColor = "#b31919";
-            document.getElementById('password').style.borderColor = "#b31919";
-        }
-
-    }
-    else {
-        document.getElementById('result').innerHTML = 'Incorrect Name';
-        document.getElementById('result').classList.remove('hidden');
-        document.getElementById('name').style.borderColor = "#b31919";
-        document.getElementById('password').style.borderColor = "#b31919";
-    }
-
-    
-}
-
-var names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nóra Kovács', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', 'Kálai Gábor', 'Németh Erik', 'Kovács Botond', 'Eőri Panna', 'Kutak Borbála', 'Ngan Pham', 'Ei Yamin Oo', ]
-var passwords = ['nutmeg29', 'pass28', 'referee53', 'goal35', 'hat-trick28', 'foul57', 'striker19', 'volley33', 'captain12', 'cleats16', 'tactics89', 'fans32', 'cleats73', 'goalkeeper10', 'formation74', 'nutmeg57', 'goalkeeper38', 'striker69', 'defense35', 'striker59', 'tactics48', 'volley43', 'kit13', 'injury78', ]
-var countries =  ['Spain', 'Portugal', 'Ukraine', 'Albania', 'Denmark', 'Belgium', 'Italy', 'Croatia', 'Romania', 'Hungary', 'Germany', 'France', 'Serbia', 'England', 'Netherlands', 'Turkey', 'Czech Republic', 'Georgia', 'Scotland', 'Switzerland', 'Austria', 'Slovenia', 'Slovakia', 'Poland']
+const names = ['Xavier Cameron-Higgs', 'Kamilla Biró', 'Anna Pálmai', 'Federica Piezzo', 'Gergely Füstös', 'Anna Ferenczy', 'Nóra Kovács', 'Bende Halasz', 'Vanessza Hajdu', 'Kristof Molnar', 'Virag Majzik', 'Bernadett Lipoczi', 'Fanni Zentai', 'Matyas Fazekas', 'Emmanuel Ehigbai', 'Alfarizy Alfarizy', 'Oluwatoni Ojo-Awosika', 'Kálai Gábor', 'Németh Erik', 'Kovács Botond', 'Eőri Panna', 'Kutak Borbála', 'Ngan Pham', 'Ei Yamin Oo'];
+const passwords = ['nutmeg29', 'pass28', 'referee53', 'goal35', 'hat-trick28', 'foul57', 'striker19', 'volley33', 'captain12', 'cleats16', 'tactics89', 'fans32', 'cleats73', 'goalkeeper10', 'formation74', 'nutmeg57', 'goalkeeper38', 'striker69', 'defense35', 'striker59', 'tactics48', 'volley43', 'kit13', 'injury78'];
+var countries = ['Spain', 'Portugal', 'Ukraine', 'Albania', 'Denmark', 'Belgium', 'Italy', 'Croatia', 'Romania', 'Hungary', 'Germany', 'France', 'Serbia', 'England', 'Netherlands', 'Turkey', 'Czech Republic', 'Georgia', 'Scotland', 'Switzerland', 'Austria', 'Slovenia', 'Slovakia', 'Poland'];
 
 const euro2024Teams = {
-    "Albania": { code: "al", url: "2--albania" },
-    "Austria": { code: "at", url: "8--austria" },
-    "Belgium": { code: "be", url: "13--belgium" },
-    "Croatia": { code: "hr", url: "56370--croatia" },
-    "Czech Republic": { code: "cz", url: "58837--czechia" },
-    "Denmark": { code: "dk", url: "35--denmark" },
-    "England": { code: "gb", url: "39--england" },
-    "France": { code: "fr", url: "43--france" },
-    "Georgia": { code: "ge", url: "57157--georgia" },
-    "Germany": { code: "de", url: "47--germany" },
-    "Hungary": { code: "hu", url: "57--hungary" },
-    "Italy": { code: "it", url: "66--italy" },
-    "Netherlands": { code: "nl", url: "95--netherlands" },
-    "Poland": { code: "pl", url: "109--poland" },
-    "Portugal": { code: "pt", url: "110--portugal" },
-    "Romania": { code: "ro", url: "113--romania" },
-    "Scotland": { code: "gb-sct", url: "117--scotland" },
-    "Serbia": { code: "rs", url: "147--serbia" },
-    "Slovakia": { code: "sk", url: "58836--slovakia" },
-    "Slovenia": { code: "si", url: "57163--slovenia" },
-    "Spain": { code: "es", url: "122--spain" },
-    "Switzerland": { code: "ch", url: "128--switzerland" },
-    "Turkey": { code: "tr", url: "135--turkiye" },
-    "Ukraine": { code: "ua", url: "57166--ukraine" }
+    "Albania": { code: "al", url: "2--albania", rank: "Top 24", cards: "7", worst: "-1" },
+    "Austria": { code: "at", url: "8--austria", rank: "Top 16", cards: "12", worst: "-1" },
+    "Belgium": { code: "be", url: "13--belgium", rank: "Top 16", cards: "8", worst: "-1" },
+    "Croatia": { code: "hr", url: "56370--croatia", rank: "Top 24", cards: "7", worst: "-3" },
+    "Czech Republic": { code: "cz", url: "58837--czechia", rank: "Top 24", cards: "15", worst: "-1" },
+    "Denmark": { code: "dk", url: "35--denmark", rank: "Top 16", cards: "9", worst: "-2" },
+    "England": { code: "gb-eng", url: "39--england", rank: "2", cards: "14", worst: "-1" },
+    "France": { code: "fr", url: "43--france", rank: "Top 4", cards: "9", worst: "-1" },
+    "Georgia": { code: "ge", url: "57157--georgia", rank: "Top 16", cards: "7", worst: "-3" },
+    "Germany": { code: "de", url: "47--germany", rank: "Top 8", cards: "14", worst: "-1" },
+    "Hungary": { code: "hu", url: "57--hungary", rank: "Top 24", cards: "10", worst: "-2" },
+    "Italy": { code: "it", url: "66--italy", rank: "Top 16", cards: "10", worst: "-2" },
+    "Netherlands": { code: "nl", url: "95--netherlands", rank: "Top 4", cards: "11", worst: "-1" },
+    "Poland": { code: "pl", url: "109--poland", rank: "Top 24", cards: "8", worst: "-2" },
+    "Portugal": { code: "pt", url: "110--portugal", rank: "Top 8", cards: "5", worst: "-2" },
+    "Romania": { code: "ro", url: "113--romania", rank: "Top 16", cards: "9", worst: "-3" },
+    "Scotland": { code: "gb-sct", url: "117--scotland", rank: "Top 24", cards: "6", worst: "-4" },
+    "Serbia": { code: "rs", url: "147--serbia", rank: "Top 24", cards: "9", worst: "-1" },
+    "Slovakia": { code: "sk", url: "58836--slovakia", rank: "Top 16", cards: "8", worst: "-1" },
+    "Slovenia": { code: "si", url: "57163--slovenia", rank: "Top 16", cards: "12", worst: "0" },
+    "Spain": { code: "es", url: "122--spain", rank: "1", cards: "17", worst: "1" },
+    "Switzerland": { code: "ch", url: "128--switzerland", rank: "Top 8", cards: "10", worst: "0" },
+    "Turkey": { code: "tr", url: "135--turkiye", rank: "Top 8", cards: "21", worst: "-3" },
+    "Ukraine": { code: "ua", url: "57166--ukraine", rank: "Top 24", cards: "3", worst: "-3" }
 };
 
+const tbody = document.querySelector('tbody');
 
+function populateTable() {
+    let bestRank = { index: 2, value: Infinity }; // 'rank' column
+    let highestCards = { index: 3, value: -Infinity }; // 'cards' column
+    let lowestWorst = { index: 4, value: Infinity }; // 'worst' column
+    
+    // First pass to identify the highest values
+    names.forEach((name, index) => {
+        let county_index = (index + 2) % passwords.length;
+        if (county_index < 0) {
+            county_index = passwords.length + county_index;
+        }
 
+        const countryElement = euro2024Teams[countries[county_index]];
+        
+        let rankValue = parseFloat(countryElement.rank.replace("Top ", ""));
+        let cardsValue = parseFloat(countryElement.cards);
+        let worstValue = parseFloat(countryElement.worst);
+        
+        if (rankValue < bestRank.value) bestRank = { index, value: rankValue };
+        if (cardsValue > highestCards.value) highestCards = { index, value: cardsValue };
+        if (worstValue < lowestWorst.value) lowestWorst = { index, value: worstValue };
+    });
 
-document.addEventListener('DOMContentLoaded', function() {
-  var tableBody = document.getElementById("summaryTableBody");
+    // Second pass to populate the table and apply highlights
+    names.forEach((name, index) => {
+        let county_index = (index + 2) % passwords.length;
+        if (county_index < 0) {
+            county_index = passwords.length + county_index;
+        }
 
-  names.forEach(function(name) {
-      var row = document.createElement('tr');
-      var cell = document.createElement('td');
-      cell.textContent = name;
-      row.appendChild(cell);
-      tableBody.appendChild(row);
-  });
+        const countryElement = euro2024Teams[countries[county_index]];
+
+        const flagElement = document.createElement('span');
+        flagElement.className = `flag-icon flag-icon-${countryElement.code}`;
+        flagElement.id = 'country_flag';
+
+        const tr = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = name;
+
+        const countryCell = document.createElement('td');
+        countryCell.appendChild(flagElement);
+        countryCell.append(` ${countries[county_index]}`);
+
+        const rankCell = document.createElement('td');
+        rankCell.textContent = countryElement.rank;
+        if (index === bestRank.index) rankCell.classList.add('highlight');
+
+        const cardsCell = document.createElement('td');
+        cardsCell.textContent = countryElement.cards;
+        if (index === highestCards.index) cardsCell.classList.add('highlight');
+
+        const worstCell = document.createElement('td');
+        worstCell.textContent = countryElement.worst;
+        if (index === lowestWorst.index) worstCell.classList.add('highlight');
+
+        tr.appendChild(nameCell);
+        tr.appendChild(countryCell);
+        tr.appendChild(rankCell);
+        tr.appendChild(cardsCell);
+        tr.appendChild(worstCell);
+
+        tbody.appendChild(tr);
+    });
+}
+
+// Initial population of the table
+populateTable();
+
+let ascending = true;
+
+// Function to sort table rows
+function sortTable(category) {
+    console.log(category, ascending);
+    const tableBody = document.querySelector('tbody');
+    const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+    // Determine the index of the category in the table header
+    let categoryIndex;
+    document.querySelectorAll('th').forEach((th, index) => {
+        if (th.textContent.trim() === category) {
+            categoryIndex = index;
+        }
+    });
+
+    // Sorting direction tracking
+    
+    rows.sort((rowA, rowB) => {
+        let valueA = rowA.querySelectorAll('td')[categoryIndex].textContent.trim();
+        let valueB = rowB.querySelectorAll('td')[categoryIndex].textContent.trim();
+
+        valueA = valueA.replace("Top ", "");
+        valueB = valueB.replace("Top ", "");
+
+        // For numeric sorting
+        if (!isNaN(valueA) && !isNaN(valueB)) {
+            valueA = parseFloat(valueA);
+            valueB = parseFloat(valueB);
+        }
+
+        // Determine sort order
+        if (ascending) {
+            return valueA > valueB ? 1 : -1;
+        } else {
+            return valueA < valueB ? 1 : -1;
+        }
+    });
+
+    // Clear table and append sorted rows
+    tableBody.innerHTML = '';
+    rows.forEach(row => tableBody.appendChild(row));
+
+    // Toggle sort direction for next click
+    ascending = !ascending;
+}
+
+// Event listeners for header clicks to trigger sorting
+document.querySelectorAll('th').forEach(header => {
+    sortTable("Name");
+    header.addEventListener('click', () => {
+        const category = header.textContent.trim();
+        sortTable(category);
+    });
 });
-
